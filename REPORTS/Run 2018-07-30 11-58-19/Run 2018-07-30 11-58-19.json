@@ -1,0 +1,127 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 308718,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.runBeforeWithOrder(Scenario)"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Validar Contratos Ativos e inativo",
+        "description": "",
+        "id": "get-contratos-ativos-quantidade.feature;validar-contratos-ativos-e-inativo;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 157323865,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I set header \"Authorization\" as \"Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Authorization",
+                  "offset": 14
+                },
+                {
+                  "val": "Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg",
+                  "offset": 33
+                }
+              ],
+              "location": "RestAPISteps.setHeader(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "output": [
+              "https://dev-br-api.experian.com/self-service/contract/v1/contracts/count?ip\u003d54.76.98.192\u0026document\u003d000000802\u0026customerType\u003d1"
+            ],
+            "result": {
+              "duration": 10795250,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I use the route \"/self-service/contract/v1/contracts/count?ip\u003d54.76.98.192\u0026document\u003d000000802\u0026customerType\u003d1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/self-service/contract/v1/contracts/count?ip\u003d54.76.98.192\u0026document\u003d000000802\u0026customerType\u003d1",
+                  "offset": 17
+                }
+              ],
+              "location": "RestAPISteps.setRoute(String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2967653659,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I send the GET request",
+            "match": {
+              "location": "RestAPISteps.getRequest()"
+            },
+            "keyword": "When "
+          },
+          {
+            "output": [
+              "HTTP/1.1 422 Unprocessable Entity",
+              "{\r\n  \"Errors\" : [ \"Unprocessable Entity\" ],\r\n  \"StatusCode\" : 422\r\n}"
+            ],
+            "result": {
+              "duration": 321845111,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I print the response",
+            "match": {
+              "location": "RestAPISteps.responseToReport()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 75538839,
+              "error_message": "com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field \"Errors\" (class com.serasa.common.utils.model.athenas.NumberOfActiveContract), not marked as ignorable (one known property: \"numberOfActiveContract\"])\n at [Source: (String)\"{\"Errors\":[\"Unprocessable Entity\"],\"StatusCode\":422}\"; line: 1, column: 12] (through reference chain: com.serasa.common.utils.model.athenas.NumberOfActiveContract[\"Errors\"])\r\n\tat com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:62)\r\n\tat com.fasterxml.jackson.databind.DeserializationContext.handleUnknownProperty(DeserializationContext.java:834)\r\n\tat com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1093)\r\n\tat com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1477)\r\n\tat com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1455)\r\n\tat com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:282)\r\n\tat com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:140)\r\n\tat com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3798)\r\n\tat com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2842)\r\n\tat com.serasa.steps.restAPI.ValidarAPIQuantidadeContrato2.validarAthenas(ValidarAPIQuantidadeContrato2.java:31)\r\n\tat ✽.Then I validate api quantidade de contratos ativos(src/test/resources/features/Get_Contratos_ativos_quantidade.feature:9)\r\n",
+              "status": "failed"
+            },
+            "line": 9,
+            "name": "I validate api quantidade de contratos ativos",
+            "match": {
+              "location": "ValidarAPIQuantidadeContrato2.validarAthenas()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@scenario01"
+          }
+        ]
+      }
+    ],
+    "name": "Get_Contratos_ativos_quantidade.feature",
+    "description": "",
+    "id": "get-contratos-ativos-quantidade.feature",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/Get_Contratos_ativos_quantidade.feature"
+  }
+]

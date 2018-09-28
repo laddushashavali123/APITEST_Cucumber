@@ -1,0 +1,244 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 337454,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.runBeforeWithOrder(Scenario)"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Validar Contrato Ativo e inativo",
+        "description": "",
+        "id": "get-contratos-ativos.feature;validar-contrato-ativo-e-inativo;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 192947533,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I set header \"Authorization\" as \"Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Authorization",
+                  "offset": 14
+                },
+                {
+                  "val": "Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg",
+                  "offset": 33
+                }
+              ],
+              "location": "RestAPISteps.setHeader(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "output": [
+              "https://dev-br-api.experian.com/self-service/contract/v1/contracts/active?ip\u003d54.76.98.192\u0026document\u003d000000208"
+            ],
+            "result": {
+              "duration": 11597838,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I use the route \"/self-service/contract/v1/contracts/active?ip\u003d54.76.98.192\u0026document\u003d000000208\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/self-service/contract/v1/contracts/active?ip\u003d54.76.98.192\u0026document\u003d000000208",
+                  "offset": 17
+                }
+              ],
+              "location": "RestAPISteps.setRoute(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3348862529,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I send the GET request",
+            "match": {
+              "location": "RestAPISteps.getRequest()"
+            },
+            "keyword": "When "
+          },
+          {
+            "output": [
+              "HTTP/1.1 200 OK",
+              "[ {\r\n  \"contractNumber\" : \"PIBSA000072017\"\r\n}, {\r\n  \"contractNumber\" : \"PIBSA000092017\"\r\n}, {\r\n  \"contractNumber\" : \"PIBSA000162016\"\r\n}, {\r\n  \"contractNumber\" : \"PIWSS000662017\"\r\n} ]"
+            ],
+            "result": {
+              "duration": 307238642,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I print the response",
+            "match": {
+              "location": "RestAPISteps.responseToReport()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "output": [
+              "Contrato: PIBSA000072017",
+              "Contrato: PIBSA000092017",
+              "Contrato: PIBSA000162016",
+              "Contrato: PIWSS000662017"
+            ],
+            "result": {
+              "duration": 93361140,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I validate api fields",
+            "match": {
+              "location": "ValidarAPI.validarAthenas()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@scenario01"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 35716,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.runBeforeWithOrder(Scenario)"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "Validar Contrato Ativo e inativo",
+        "description": "",
+        "id": "get-contratos-ativos.feature;validar-contrato-ativo-e-inativo;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 164622,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I set header \"Authorization\" as \"Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Authorization",
+                  "offset": 14
+                },
+                {
+                  "val": "Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg",
+                  "offset": 33
+                }
+              ],
+              "location": "RestAPISteps.setHeader(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "output": [
+              "https://dev-br-api.experian.com/self-service/contract/v1/contracts/active?ip\u003d54.76.98.192\u0026document\u003d000000802"
+            ],
+            "result": {
+              "duration": 1101448,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I use the route \"/self-service/contract/v1/contracts/active?ip\u003d54.76.98.192\u0026document\u003d000000802\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/self-service/contract/v1/contracts/active?ip\u003d54.76.98.192\u0026document\u003d000000802",
+                  "offset": 17
+                }
+              ],
+              "location": "RestAPISteps.setRoute(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 729212996,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I send the GET request",
+            "match": {
+              "location": "RestAPISteps.getRequest()"
+            },
+            "keyword": "When "
+          },
+          {
+            "output": [
+              "HTTP/1.1 400 Bad Request"
+            ],
+            "result": {
+              "duration": 1105142,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I print the response",
+            "match": {
+              "location": "RestAPISteps.responseToReport()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 582130,
+              "error_message": "com.fasterxml.jackson.core.JsonParseException: Unexpected character (\u0027\u003c\u0027 (code 60)): expected a valid value (number, String, array, object, \u0027true\u0027, \u0027false\u0027 or \u0027null\u0027)\n at [Source: (String)\"\u003c!DOCTYPE html\u003e\u003chtml\u003e\u003chead\u003e\u003ctitle\u003eError\u003c/title\u003e\u003cstyle\u003e    body {        width: 35em;        margin: 0 auto;        font-family: Tahoma, Verdana, Arial, sans-serif;    }\u003c/style\u003e\u003c/head\u003e\u003cbody\u003e\u003ch1\u003eAn error occurred.\u003c/h1\u003e\u003cp\u003eSorry, the page you are looking for is currently unavailable.\u003cbr/\u003ePlease try again later.\u003c/p\u003e\u003c/body\u003e\u003c/html\u003e\"; line: 1, column: 2]\r\n\tat com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1798)\r\n\tat com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:663)\r\n\tat com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:561)\r\n\tat com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:1892)\r\n\tat com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:747)\r\n\tat com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:3834)\r\n\tat com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3783)\r\n\tat com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2861)\r\n\tat com.serasa.steps.restAPI.ValidarAPI.validarAthenas(ValidarAPI.java:29)\r\n\tat ✽.Then I validate api fields(src/test/resources/features/Get_Contratos_ativos.feature:9)\r\n",
+              "status": "failed"
+            },
+            "line": 9,
+            "name": "I validate api fields",
+            "match": {
+              "location": "ValidarAPI.validarAthenas()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@scenario01"
+          }
+        ]
+      }
+    ],
+    "name": "Get_Contratos_ativos.feature",
+    "description": "",
+    "id": "get-contratos-ativos.feature",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/Get_Contratos_ativos.feature"
+  }
+]

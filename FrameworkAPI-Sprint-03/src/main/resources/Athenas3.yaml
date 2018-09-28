@@ -1,0 +1,195 @@
+﻿swagger: '2.0'
+info:
+  title: Customer API
+  version: 1.0.0
+  description: This Customer API allows you to get informations about the customer from user.
+  contact:
+    name: CorporateSystemsSaoCarlos
+    email: CorporateSystemsSaoCarlos@br.experian.com
+host: sandbox-api.serasaexperian.com.br
+basePath: /self-service/customer/v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  OauthSecurity:
+    type: oauth2
+    flow: accessCode
+    authorizationUrl: 'https://www.serasaexperian.com.br/security/iam'
+    tokenUrl: 'https://www.serasaexperian.com.br/security/iam'
+    scopes:
+      bearer: Client authorization token - Bearer JWT
+security:
+  - OauthSecurity:
+      - bearer
+paths:
+  /customers:
+    get:
+      summary: Returns the list of customers from user.
+      description:
+        |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          customers?ip=54.76.98.192&documentBase=000000208&customerType=L
+        ```
+        ##### Sample Response:
+        ```json
+        [
+            {
+                "tradingName": "Bilbo Baggins",
+                "document": 12345678
+            },
+            {
+                "tradingName": "Frodo Baggins",
+                "document": 12345678000100
+            }
+        ]
+        ```
+      operationId: getCustomers
+      produces:
+        - application/json
+      parameters:
+        - name: documentBase
+          in: query
+          description: Unique number to identify the customer.
+          required: true
+          type: string
+          default: ''
+        - name: ip
+          in: query
+          required: true
+          type: string
+          format: ''
+          description: Requester IP address to audit trail.
+        - name: customerType
+          in: query
+          description: Customer type simplify (S) or legacy (L) or none (N).
+          required: false
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Customer'
+            description: List of customers
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+  /customer/type:
+    get:
+      summary: Returns if the customer is simplify (S) or legacy (L) or none (N).
+      description:
+        |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          customer/type?ip=54.76.98.192&documentBase=000000208
+        ```
+        ##### Sample Response:
+        ```json
+        {
+            "type": "L"
+        }
+        ```
+      operationId: getCustomerType
+      produces:
+        - application/json
+      parameters:
+        - name: ip
+          in: query
+          required: true
+          type: string
+          format: ''
+          description: Requester IP address to audit trail.
+        - name: documentBase
+          in: query
+          description: Unique number to identify the customer.
+          required: true
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful
+          schema:
+            $ref: '#/definitions/CustomerType'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Error:
+    type: object
+    required:
+        - code
+        - message
+    properties:
+      code:
+        type: integer
+        format: int32
+        description: HTTP error code
+      message:
+        type: string
+        description: Returns the error code message
+  Customer:
+    description: Information about the customer document and trading name
+    type: object
+    properties:
+      tradingName:
+        description: Customer trading name
+        type: string
+      document:
+        description: Number that identify the customer
+        type: string
+  CustomerType:
+    description: Information about the customer type
+    type: object
+    properties:
+      type:
+        description: Customer type simplify (S) or legacy (L) or none (N)
+        type: string

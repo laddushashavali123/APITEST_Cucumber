@@ -1,0 +1,134 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 254528,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.runBeforeWithOrder(Scenario)"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "ValidarAPI_HEADER_NOME",
+        "description": "",
+        "id": "header-nome.feature;validarapi-header-nome;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 125793449,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I set header \"Authorization\" as \"Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Authorization",
+                  "offset": 14
+                },
+                {
+                  "val": "Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg",
+                  "offset": 33
+                }
+              ],
+              "location": "RestAPISteps.setHeader(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "output": [
+              "https://dev-br-api.experian.comhttps://dev-br-api.experian.com/self-service/menu/v1/menuItems?ip\u003d54.76.98.192\u0026documentBase\u003d\u003cdocumentBase\u003e\u0026customerType\u003d\u003ccustomerType\u003e"
+            ],
+            "result": {
+              "duration": 7944556,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I use the route \"https://dev-br-api.experian.com/self-service/menu/v1/menuItems?ip\u003d54.76.98.192\u0026documentBase\u003d\u003cdocumentBase\u003e\u0026customerType\u003d\u003ccustomerType\u003e\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://dev-br-api.experian.com/self-service/menu/v1/menuItems?ip\u003d54.76.98.192\u0026documentBase\u003d\u003cdocumentBase\u003e\u0026customerType\u003d\u003ccustomerType\u003e",
+                  "offset": 17
+                }
+              ],
+              "location": "RestAPISteps.setRoute(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 693137434,
+              "error_message": "java.net.URISyntaxException: Illegal character in query at index 92: https://dev-br-api.experian.com/self-service/menu/v1/menuItems?ip\u003d54.76.98.192\u0026documentBase\u003d\u003cdocumentBase\u003e\u0026customerType\u003d\u003ccustomerType\u003e\r\n\tat java.net.URI$Parser.fail(URI.java:2848)\r\n\tat java.net.URI$Parser.checkChars(URI.java:3021)\r\n\tat java.net.URI$Parser.parseHierarchical(URI.java:3111)\r\n\tat java.net.URI$Parser.parse(URI.java:3053)\r\n\tat java.net.URI.\u003cinit\u003e(URI.java:588)\r\n\tat org.apache.http.client.utils.URIBuilder.\u003cinit\u003e(URIBuilder.java:82)\r\n\tat com.serasa.common.utils.httpclient.HttpClient.sendGet(HttpClient.java:64)\r\n\tat com.serasa.steps.restAPI.RestAPISteps.getRequest(RestAPISteps.java:102)\r\n\tat ✽.When I send the GET request(src/test/resources/features/HEADER_MENU.feature:7)\r\n",
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "I send the GET request",
+            "match": {
+              "location": "RestAPISteps.getRequest()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "I print the response",
+            "match": {
+              "location": "RestAPISteps.responseToReport()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "Http response should be 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 24
+                }
+              ],
+              "location": "RestAPISteps.validateResponse(Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "I validate api Header Menu",
+            "match": {
+              "location": "ValidarAPI_HEADER_MENU.validarAthenas()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@scenario01"
+          }
+        ]
+      }
+    ],
+    "name": "HEADER_NOME.feature",
+    "description": "",
+    "id": "header-nome.feature",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/HEADER_MENU.feature"
+  }
+]

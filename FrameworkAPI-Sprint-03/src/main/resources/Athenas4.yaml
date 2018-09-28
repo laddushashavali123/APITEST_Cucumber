@@ -1,0 +1,105 @@
+﻿swagger: '2.0'
+info:
+  title: Authentication API
+  version: 1.0.0
+  description: This Authentication API allows you to get the authentication information.
+  contact:
+    name: CorporateSystemsSaoCarlos
+    email: CorporateSystemsSaoCarlos@br.experian.com
+host: sandbox-api.serasaexperian.com.br
+basePath: /self-service/authentication/v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  OauthSecurity:
+    type: oauth2
+    flow: accessCode
+    authorizationUrl: 'https://www.serasaexperian.com.br/security/iam'
+    tokenUrl: 'https://www.serasaexperian.com.br/security/iam'
+    scopes:
+      bearer: Client authorization token - Bearer JWT
+security:
+  - OauthSecurity:
+      - bearer
+paths:
+  /authenticationInfo:
+    get:
+      summary: Returns the authentication information from token
+      description:
+        |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          authenticationInfo
+        ```
+        ##### Sample Response:
+        ```json
+        {
+          "documentBase": "000000208",
+          "logon": "Robson Santos",
+          "expiration": "2018-07-31T17:30:00.000Z"
+        }
+        ```
+      operationId: getAuthenticationInfo
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Successful
+          schema:
+            $ref: '#/definitions/AuthenticationInfo'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Error:
+    type: object
+    required:
+        - code
+        - message
+    properties:
+      code:
+        type: integer
+        format: int32
+        description: HTTP error code
+      message:
+        type: string
+        description: Returns the error code message
+  AuthenticationInfo:
+    description: The authentication information
+    type: object
+    properties:
+      documentBase:
+        type: string
+        description: Unique number to identify the customer
+      logon:
+        type: string
+        description: The user name
+      expiration:
+        type: string
+        format: date-time
+        description: Remaining time for the session to expire

@@ -1,0 +1,315 @@
+﻿swagger: '2.0'
+info:
+  title: Invoice API
+  version: 1.0.0
+  description: This Invoice API allows you to get informations about invoices.
+  contact:
+    name: CorporateSystemsSaoCarlos
+    email: CorporateSystemsSaoCarlos@br.experian.com
+host: sandbox-api.serasaexperian.com.br
+basePath: /self-service/invoice/v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  OauthSecurity:
+    type: oauth2
+    flow: accessCode
+    authorizationUrl: 'https://www.serasaexperian.com.br/security/iam'
+    tokenUrl: 'https://www.serasaexperian.com.br/security/iam'
+    scopes:
+      bearer: Client authorization token - Bearer JWT
+security:
+  - OauthSecurity:
+      - bearer
+paths:
+  /invoices:
+    get:
+      summary: Returns invoices number and their values from document base
+      description:
+        |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          invoices?ip=54.76.98.192&documentBase=000000208
+        ```
+        ##### Sample Response:
+        ```json
+        [
+            {
+                "dueDate": 2018-04-10,
+                "value": 350.00
+            },
+            {
+                "dueDate": 2018-05-10,
+                "value": 200.00
+            }
+        ]
+        ```
+      operationId: getInvoices
+      produces:
+        - application/json
+      parameters:
+        - name: ip
+          in: query
+          required: true
+          type: string
+          format: ''
+          description: Requester IP address to audit trail.
+        - name: documentBase
+          in: query
+          description: Unique number to identify the customer.
+          required: true
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Invoice'
+            description: List of invoices
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+  /invoices/amount:
+    get:
+      summary: Returns the invoices amount and total value.
+      description:
+        |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          invoices/amount?ip=54.76.98.192&documentBase=000000208
+        ```
+        ##### Sample Response:
+        ```json
+        {
+            "count": 2,
+            "totalValue": 550.00
+        }
+        ```
+      operationId: getInvoicesAmount
+      produces:
+        - application/json
+      parameters:
+        - name: ip
+          in: query
+          required: true
+          type: string
+          format: ''
+          description: Requester IP address to audit trail.
+        - name: documentBase
+          description: Unique number to identify the customer.
+          in: query
+          required: true
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful
+          schema:
+            $ref: '#/definitions/InvoicesAmount'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+  /invoices/list:
+    get:
+      summary: Returns the list of invoices from filter
+      description:
+        |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          invoices/list?ip=54.76.98.192&documentBase=000000208&startDate=2018-04-01&endDate=2018-04-30&status=Aberto&contractNumber=PIBSA000072017&nfeNumber=123456
+        ```
+        ##### Sample Response:
+        ```json
+        [
+            {
+                "dueDate": 2018-04-10,
+                "value": 350.00,
+                "contractNumber": "PIBSA000072017",
+                "nfeNumber": "123456",
+                "status": "Aberto",
+                "emissionDate": 2018-03-20
+            },
+            {
+                "dueDate": 2018-05-15,
+                "value": 200.00,
+                "contractNumber": "PIBSA000072017",
+                "nfeNumber": "123456",
+                "status": "Aberto",
+                "emissionDate": 2018-03-25
+            }
+        ]
+        ```
+      operationId: getInvoicesList
+      produces:
+        - application/json
+      parameters:
+        - name: ip
+          in: query
+          required: true
+          type: string
+          format: ''
+          description: Requester IP address to audit trail.
+        - name: documentBase
+          in: query
+          description: Unique number to identify the customer.
+          required: true
+          type: string
+          default: ''
+        - name: startDate
+          in: query
+          description: Start date of the invoice expiration date.
+          required: true
+          type: string
+          format: date
+        - name: endtDate
+          in: query
+          description: End date of the invoice expiration date.
+          required: true
+          type: string
+          format: date
+        - name: status
+          in: query
+          description: Invoice status. Accepted values "Aberto", "Fechado", "Acordo".
+          required: false
+          type: string
+        - name: contractNumber
+          in: query
+          description: Contract number.
+          required: false
+          type: string
+        - name: nfeNumber
+          in: query
+          description: NF-e number.
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Invoice'
+            description: List of invoices
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Error:
+    type: object
+    required:
+        - code
+        - message
+    properties:
+      code:
+        type: integer
+        format: int32
+        description: HTTP error code
+      message:
+        type: string
+        description: Returns the error code message
+  Invoice:
+    description: Information about the invoice value and due date
+    type: object
+    properties:
+      dueDate:
+        description: Invoice due date
+        type: string
+        format: date
+      value:
+        description: Invoice value
+        type: number
+        format: float
+      contractNumber:
+        description: Contract number
+        type: string
+      nfeNumber:
+        description: NF-e number
+        type: string
+      status:
+        description: Invoice status
+        type: string
+      emissionDate:
+        description: Invoice emission date
+        type: string
+        format: date
+  InvoicesAmount:
+    description: Invoices amount and total value
+    type: object
+    properties:
+      count:
+        description: Number of open invoices
+        type: integer
+        format: int32
+      totalValue:
+        description: Total value of open invoices
+        type: number
+        format: float

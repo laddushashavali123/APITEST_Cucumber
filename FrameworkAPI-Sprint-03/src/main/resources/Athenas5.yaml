@@ -1,0 +1,125 @@
+﻿swagger: '2.0'
+info:
+  title: Menu API
+  version: 1.0.0
+  description: This Menu API allows you to obtain the menu links and names
+  contact:
+    name: CorporateSystemsSaoCarlos
+    email: CorporateSystemsSaoCarlos@br.experian.com
+host: sandbox-api.serasaexperian.com.br
+basePath: /self-service/menu/v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  OauthSecurity:
+    type: oauth2
+    flow: accessCode
+    authorizationUrl: 'https://www.serasaexperian.com.br/security/iam'
+    tokenUrl: 'https://www.serasaexperian.com.br/security/iam'
+    scopes:
+      bearer: Client authorization token - Bearer JWT
+security:
+  - OauthSecurity:
+      - bearer
+paths:
+  /menuItems:
+    get:
+      summary: Returns the menu items of the document base.
+      description:
+        |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          menuItems?ip=54.76.98.192&documentBase=000000208&customerType=L
+        ```
+        ##### Sample Response:
+        ```json
+        [
+            {
+                "item": "Home",
+                "link": "www.serasaexperian.com/home"
+            },
+            {
+                "item": "Invoices",
+                "link": "www.serasaexperian.com/invoices"
+            }
+        ]
+        ```
+      operationId: getMenuItems
+      produces:
+        - application/json
+      parameters:
+        - name: ip
+          in: query
+          required: true
+          type: string
+          format: ''
+          description: Requester IP address to audit trail.
+        - name: documentBase
+          in: query
+          description: Unique number to identify the customer.
+          required: true
+          type: string
+          default: ''
+        - name: customerType
+          in: query
+          description: Customer type simplify (S) or legacy (L) or none (N).
+          required: false
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful
+          schema:
+            $ref: '#/definitions/MenuItem'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Error:
+    type: object
+    required:
+        - code
+        - message
+    properties:
+      code:
+        type: integer
+        format: int32
+        description: HTTP error code
+      message:
+        type: string
+        description: Returns the error code message
+  MenuItem:
+    description: The menu item information
+    type: object
+    properties:
+      item:
+        type: string
+        description: The menu item name
+      link:
+        type: string
+        description: The menu item link

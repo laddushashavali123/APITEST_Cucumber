@@ -1,0 +1,187 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 243854,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.runBeforeWithOrder(Scenario)"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "validar vcm",
+        "description": "",
+        "id": "get-histórico-de-consumo-vcm.feature;validar-vcm;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 124794787,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I set header \"Authorization\" as \"Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Authorization",
+                  "offset": 14
+                },
+                {
+                  "val": "Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg",
+                  "offset": 33
+                }
+              ],
+              "location": "RestAPISteps.setHeader(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "output": [
+              "https://dev-br-api.experian.com/self-service/contract/v1/contracts/contractNumber/vcm?ip\u003d54.76.98.192\u0026document\u003d000000802\u0026customerType\u003d"
+            ],
+            "result": {
+              "duration": 8222877,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I use the route \"/self-service/contract/v1/contracts/contractNumber/vcm?ip\u003d54.76.98.192\u0026document\u003d000000802\u0026customerType\u003d\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/self-service/contract/v1/contracts/contractNumber/vcm?ip\u003d54.76.98.192\u0026document\u003d000000802\u0026customerType\u003d",
+                  "offset": 17
+                }
+              ],
+              "location": "RestAPISteps.setRoute(String)"
+            },
+            "matchedColumns": [
+              0,
+              3
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 154358,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I set pathparameter \"contractNumber\" as \"123\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "contractNumber",
+                  "offset": 21
+                },
+                {
+                  "val": "123",
+                  "offset": 41
+                }
+              ],
+              "location": "RestAPISteps.setPathParameter(String,String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3693156127,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I send the GET request",
+            "match": {
+              "location": "RestAPISteps.getRequest()"
+            },
+            "keyword": "When "
+          },
+          {
+            "output": [
+              "https://dev-br-api.experian.com/self-service/contract/v1/contracts/123/vcm?ip\u003d54.76.98.192\u0026document\u003d000000802\u0026customerType\u003d",
+              "[Authorization: Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg]",
+              "[]"
+            ],
+            "result": {
+              "duration": 318980,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I print the path",
+            "match": {
+              "location": "RestAPISteps.pathToReport()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "output": [
+              "HTTP/1.1 200 OK",
+              "{\r\n  \"vcmValue\" : 0.0\r\n}"
+            ],
+            "result": {
+              "duration": 270651717,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I print the response",
+            "match": {
+              "location": "RestAPISteps.responseToReport()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2301420,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Http response should be 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 24
+                }
+              ],
+              "location": "RestAPISteps.validateResponse(Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 64847015,
+              "error_message": "com.fasterxml.jackson.databind.JsonMappingException: Can not deserialize instance of java.util.ArrayList out of START_OBJECT token\n at [Source: (String)\"{\"vcmValue\":0.0}\"; line: 1, column: 1]\r\n\tat com.fasterxml.jackson.databind.JsonMappingException.from(JsonMappingException.java:270)\r\n\tat com.fasterxml.jackson.databind.DeserializationContext.reportMappingException(DeserializationContext.java:1234)\r\n\tat com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1122)\r\n\tat com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1075)\r\n\tat com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.handleNonArray(CollectionDeserializer.java:338)\r\n\tat com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:269)\r\n\tat com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:259)\r\n\tat com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:26)\r\n\tat com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3798)\r\n\tat com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2861)\r\n\tat com.serasa.steps.restAPI.ValidarAPIVCM.validarAthenas(ValidarAPIVCM.java:28)\r\n\tat ✽.Then I validate api historico de consumo VCM(src/test/resources/features/Get_Historico_de_consumo_vcm.feature:12)\r\n",
+              "status": "failed"
+            },
+            "line": 12,
+            "name": "I validate api historico de consumo VCM",
+            "match": {
+              "location": "ValidarAPIVCM.validarAthenas()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@scenario01"
+          }
+        ]
+      }
+    ],
+    "name": "Get_Histórico_de_consumo_vcm.feature",
+    "description": "",
+    "id": "get-histórico-de-consumo-vcm.feature",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/Get_Historico_de_consumo_vcm.feature"
+  }
+]

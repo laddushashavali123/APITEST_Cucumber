@@ -1,0 +1,166 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 211422,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.runBeforeWithOrder(Scenario)"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Validar Contrato Ativo e inativo",
+        "description": "",
+        "id": "get-contratos-ativos.feature;validar-contrato-ativo-e-inativo;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 167081369,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I set header \"Authorization\" as \"Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Authorization",
+                  "offset": 14
+                },
+                {
+                  "val": "Bearer eyJhbGciOiJSUzUxMiJ9.ew0KICAianRpIjogIjllNzRkMWY2LTcwOTUtNDcxOC04ZjExLTQ3ZGM5ZWM5OWM2MyIsDQogICJpYXQiOiAxNTI3NjE1NzQwLA0KICAic2NvcGUiOiBbDQogICAgInJlYWQiLA0KICAgICJ3cml0ZSINCiAgXSwNCiAgInVzZXJfaWQiOiAiNWIwMzQ4ZDE4ZTc0ZGIwMDA4ZmI5YTc4IiwNCiAgImNsaWVudF9pZCI6ICI1YjA0MmZiNzNkN2ExNzAwMDk1NzJiYTciLA0KICAiYXBwX2lkIjogIjViMDQyY2Q1OGU3NGRiMDAwOGZiOWI0NyIsDQogICJzZXJ2aWNlX2lkIjogIjViMDQyZmI2OGU3NGRiMDAwOGZiOWI1MyIsDQogICJhdXRob3JpdGllcyI6IFsNCiAgICAiUk9MRV9DTEktQVVUSC1JREVOVElGSUVEIiwNCiAgICAiUk9MRV9DTEktMVNUUEFSVFkiLA0KICAgICJST0xFX0NMSS1BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9DTEktM1JEUEFSVFkiLA0KICAgIA0KICAgICJST0xFX0FVVEgtTUZBIiwNCiAgICAiUk9MRV9BVVRILUJBU0lDIiwNCiAgICAiUk9MRV9BVVRILUlERU5USUZJRUQiLA0KICAgICJST0xFX1NFQ0FETUlOIiwNCiAgICAiUk9MRV9BRE1JTiIsDQogICAgIlJPTEVfVVNFUiIsDQogICAgIlJPTEVfUEVSU09OIg0KICBdLA0KICAiZXhwIjogMTU1OTE1NTc0MA0KfQ.m4sse9KGzl1rara5VcgFJcktk7-3qH0SzhJQ2IQPAfxbFP_mmduJ3EkJkQ8zxtxoNlrP85gOcacFNQJio5HffEtlDjlHXmZo1kkxYFobwgAZB5iVS0UEPylreWJYIqVTaR6gUaxfuEu76wbjfmE0gUlSqy0cLQpRy-idq0nOnPb2g4p-jCnkwqQGCTheES2s86mjhWFjFmmEc2KaqsvqCU9AxnjLc_3y3tgvbuQGnsiRK22S1_3PI2qpao3WLVzV16f3PB2i2y6kcgFXqjUoNwVcXO2fBwJ8yMFs7BWKhW9NgXcLn5AWrWrxJeWO0jHVWwnfA6Hf-V1uKWGSSj-Jlg",
+                  "offset": 33
+                }
+              ],
+              "location": "RestAPISteps.setHeader(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "output": [
+              "https://dev-br-api.experian.com/self-service/contract/v1/contracts/active?ip\u003d54.76.98.192\u0026document\u003d000000802"
+            ],
+            "result": {
+              "duration": 11523122,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I use the route \"/self-service/contract/v1/contracts/active?ip\u003d54.76.98.192\u0026document\u003d000000802\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/self-service/contract/v1/contracts/active?ip\u003d54.76.98.192\u0026document\u003d000000802",
+                  "offset": 17
+                }
+              ],
+              "location": "RestAPISteps.setRoute(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3935870125,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I send the GET request",
+            "match": {
+              "location": "RestAPISteps.getRequest()"
+            },
+            "keyword": "When "
+          },
+          {
+            "output": [
+              "HTTP/1.1 200 OK",
+              "[ {\r\n  \"contractNumber\" : \"123\"\r\n}, {\r\n  \"contractNumber\" : \"123\"\r\n}, {\r\n  \"contractNumber\" : \"142345\"\r\n}, {\r\n  \"contractNumber\" : \"CONT3325\"\r\n}, {\r\n  \"contractNumber\" : \"CONTR IND P\"\r\n}, {\r\n  \"contractNumber\" : \"CONTR IND P\"\r\n}, {\r\n  \"contractNumber\" : \"PIBSA000102017\"\r\n}, {\r\n  \"contractNumber\" : \"PIBSA000122017\"\r\n}, {\r\n  \"contractNumber\" : \"PIBSA000512013\"\r\n}, {\r\n  \"contractNumber\" : \"PIBSA000772013\"\r\n}, {\r\n  \"contractNumber\" : \"PIBSA000782013\"\r\n}, {\r\n  \"contractNumber\" : \"PIWSS000652017\"\r\n}, {\r\n  \"contractNumber\" : \"TEST\"\r\n}, {\r\n  \"contractNumber\" : \"TEST\"\r\n}, {\r\n  \"contractNumber\" : \"TEST REAP ESP\"\r\n}, {\r\n  \"contractNumber\" : \"TEST REAP ESP\"\r\n}, {\r\n  \"contractNumber\" : \"TEST SERA INCL\"\r\n}, {\r\n  \"contractNumber\" : \"TEST SERA INCL\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE INCL 2\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE INCL 2\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE INCL 3\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE INCL 3\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE MODALI\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE MODALIDAD\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE RE ESP\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE RENATO\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE RENATO\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE SERACON\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE SERACON\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE_USRMAIN\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE_USRMAIN\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE_USRMAIN\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE2\"\r\n}, {\r\n  \"contractNumber\" : \"TESTE2\"\r\n}, {\r\n  \"contractNumber\" : \"TESTEENVIA\"\r\n}, {\r\n  \"contractNumber\" : \"TESTEENVIA\"\r\n}, {\r\n  \"contractNumber\" : \"TESTEENVIA\"\r\n} ]"
+            ],
+            "result": {
+              "duration": 320807838,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I print the response",
+            "match": {
+              "location": "RestAPISteps.responseToReport()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "output": [
+              "Contrato: 123",
+              "Contrato: 123",
+              "Contrato: 142345",
+              "Contrato: CONT3325",
+              "Contrato: CONTR IND P",
+              "Contrato: CONTR IND P",
+              "Contrato: PIBSA000102017",
+              "Contrato: PIBSA000122017",
+              "Contrato: PIBSA000512013",
+              "Contrato: PIBSA000772013",
+              "Contrato: PIBSA000782013",
+              "Contrato: PIWSS000652017",
+              "Contrato: TEST",
+              "Contrato: TEST",
+              "Contrato: TEST REAP ESP",
+              "Contrato: TEST REAP ESP",
+              "Contrato: TEST SERA INCL",
+              "Contrato: TEST SERA INCL",
+              "Contrato: TESTE",
+              "Contrato: TESTE",
+              "Contrato: TESTE INCL 2",
+              "Contrato: TESTE INCL 2",
+              "Contrato: TESTE INCL 3",
+              "Contrato: TESTE INCL 3",
+              "Contrato: TESTE MODALI",
+              "Contrato: TESTE MODALIDAD",
+              "Contrato: TESTE RE ESP",
+              "Contrato: TESTE RENATO",
+              "Contrato: TESTE RENATO",
+              "Contrato: TESTE SERACON",
+              "Contrato: TESTE SERACON",
+              "Contrato: TESTE_USRMAIN",
+              "Contrato: TESTE_USRMAIN",
+              "Contrato: TESTE_USRMAIN",
+              "Contrato: TESTE2",
+              "Contrato: TESTE2",
+              "Contrato: TESTEENVIA",
+              "Contrato: TESTEENVIA",
+              "Contrato: TESTEENVIA"
+            ],
+            "result": {
+              "duration": 99308875,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I validate api fields",
+            "match": {
+              "location": "ValidarAPI.validarAthenas()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@scenario01"
+          }
+        ]
+      }
+    ],
+    "name": "Get_Contratos_ativos.feature",
+    "description": "",
+    "id": "get-contratos-ativos.feature",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/Get_Contratos_ativos.feature"
+  }
+]

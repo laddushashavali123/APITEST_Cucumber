@@ -1,0 +1,836 @@
+﻿swagger: '2.0'
+info:
+  title: Invoice API
+  version: 1.0.0
+  description: This Invoice API allows you to get informations about invoices.
+  contact:
+    name: CorporateSystemsSaoCarlos
+    email: CorporateSystemsSaoCarlos@br.experian.com
+host: sandbox-api.serasaexperian.com.br
+basePath: /self-service/invoice/v1
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+securityDefinitions:
+  OauthSecurity:
+    type: oauth2
+    flow: accessCode
+    authorizationUrl: https://www.serasaexperian.com.br/security/iam
+    tokenUrl: https://www.serasaexperian.com.br/security/iam
+    scopes:
+      bearer: Client authorization token - Bearer JWT
+security:
+- OauthSecurity:
+  - bearer
+paths:
+  /invoices:
+    get:
+      summary: Returns invoices number and their values from document base
+      description: "##### Sample Request:\n```\nApiGateway:\n  header:\n    bearer:\
+        \ 0bfc68f0-2514-11e6-b67b-9e71128cae77\nSimple URL:\n  invoices?ip=54.76.98.192&document=000000208\n\
+        ```\n##### Sample Response:\n```json\n[\n    {\n        \"dueDate\": 2018-04-10,\n\
+        \        \"value\": 350.00,\n        \"nfeNumber\": \"1234567\",\n       \
+        \ \"linkNFe\": \"www.nfe.com/get?num=1234567\",\n        \"barCode\": \"11111.11111\
+        \ 222222.22222\",\n        \"linkInvoice\": \"www.invoice.com/get?id=WAOBYA21ZI\"\
+        \n        \n    },\n    {\n        \"dueDate\": 2018-05-10,\n        \"value\"\
+        : 200.00,\n        \"nfeNumber\": \"1234567\",\n        \"linkNFe\": \"www.nfe.com/get?num=1234567\"\
+        ,\n        \"barCode\": \"11111.11111 222222.22222\",\n        \"linkInvoice\"\
+        : \"www.invoice.com/get?id=WAOBYA21ZI\"\n    }\n]\n```\n"
+      operationId: getInvoices
+      produces:
+      - application/json
+      parameters:
+      - name: ip
+        in: query
+        required: true
+        type: string
+        format: ''
+        description: Requester IP address to audit trail.
+      - name: document
+        in: query
+        description: Unique number to identify the customer. The number can be the Document Base (12345678) or the Document (12345678000100).
+        required: true
+        type: string
+        default: ''
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Invoice'
+            description: List of invoices
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+  /invoices/amount:
+    get:
+      summary: Returns the invoices amount and total value.
+      description: |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          invoices/amount?ip=54.76.98.192&document=000000208
+        ```
+        ##### Sample Response:
+        ```json
+        {
+            "count": 2,
+            "totalValue": 550.00
+        }
+        ```
+      operationId: getInvoicesAmount
+      produces:
+      - application/json
+      parameters:
+      - name: ip
+        in: query
+        required: true
+        type: string
+        format: ''
+        description: Requester IP address to audit trail.
+      - name: document
+        description: Unique number to identify the customer. The number can be the Document Base (12345678) or the Document (12345678000100).
+        in: query
+        required: true
+        type: string
+        default: ''
+      responses:
+        '200':
+          description: Successful
+          schema:
+            $ref: '#/definitions/InvoicesAmount'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+  /invoices/list:
+    get:
+      summary: Returns the list of invoices from filter
+      description: |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          invoices/list?ip=54.76.98.192&document=000000208&startDate=2018-04-01&endDate=2018-04-30&status=Aberto&contractNumber=PIBSA000072017&nfeNumber=123456
+        ```
+        ##### Sample Response:
+        ```json
+        [
+            {
+                "dueDate": 2018-04-10,
+                "value": 350.00,
+                "contractNumber": "PIBSA000072017",
+                "nfeNumber": "123456",
+                "status": "Aberto",
+                "emissionDate": 2018-03-20,
+                "agencyCode": "078",
+                "nfNumber": "12345678",
+                "sourceSystem": "SERACOM"
+            },
+            {
+                "dueDate": 2018-05-15,
+                "value": 200.00,
+                "contractNumber": "PIBSA000072017",
+                "nfeNumber": "123456",
+                "status": "Aberto",
+                "emissionDate": 2018-03-25,
+                "agencyCode": "078",
+                "nfNumber": "12345678",
+                "sourceSystem": "SERACOM"
+            }
+        ]
+        ```
+      operationId: getInvoicesList
+      produces:
+      - application/json
+      parameters:
+      - name: ip
+        in: query
+        required: true
+        type: string
+        format: ''
+        description: Requester IP address to audit trail.
+      - name: document
+        in: query
+        description: Unique number to identify the customer. The number can be the Document Base (12345678) or the Document (12345678000100).
+        required: true
+        type: string
+        default: ''
+      - name: startDate
+        in: query
+        description: Start date of the invoice expiration date.
+        required: true
+        type: string
+        format: date
+      - name: endDate
+        in: query
+        description: End date of the invoice expiration date.
+        required: true
+        type: string
+        format: date
+      - name: status
+        in: query
+        description: Invoice status. Accepted values "Aberto", "Fechado", "Acordo".
+        required: false
+        type: string
+      - name: contractNumber
+        in: query
+        description: Contract number.
+        required: false
+        type: string
+      - name: contractDescription
+        in: query
+        description: Contract description.
+        required: false
+        type: string
+      - name: nfeNumber
+        in: query
+        description: NF-e number.
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Invoice'
+            description: List of invoices
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+  /invoices/detail:
+    get:
+      summary: Returns the invoice detail and products
+      description: |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          invoices/detail?ip=54.76.98.192&document=000000208&emissionDate=2018-04-01&nfeNumber=682179&nfNumber=72017&agencyCode=54&sourceSystem=BRM
+        ```
+        ##### Sample Response:
+        ```json
+        {
+            "startDateCicle": "06/01/2018",
+            "endDateCicle": "05/02/2018",
+            "city": "Sanca",
+            "verificationCode": "091923112",
+            "discountValue": 0,
+            "totalValue": 72.38,
+            "vcm": 40.00,
+            "installtments": 1,
+            "products":
+            [
+              {
+                "name": "PERFIN PF",
+                "quantity": 2,
+                "unityValue": 11.62,
+                "discountValue": 0,
+                "totalValue": 23.24
+              },
+              {
+                "name": "PERFIN PJ",
+                "quantity": 3,
+                "unityValue": 16.38,
+                "discountValue": 0,
+                "totalValue": 49.14
+              }
+            ]
+        }
+        ```
+      operationId: getInvoiceDetail
+      produces:
+      - application/json
+      parameters:
+      - name: ip
+        in: query
+        required: true
+        type: string
+        format: ''
+        description: Requester IP address to audit trail.
+      - name: document
+        in: query
+        description: Unique number to identify the customer. The number can be the Document Base (12345678) or the Document (12345678000100).
+        required: true
+        type: string
+        default: ''
+      - name: emissionDate
+        in: query
+        description: Emission date of the invoice.
+        required: true
+        type: string
+        format: date
+      - name: nfeNumber
+        in: query
+        description: NF-e number.
+        required: true
+        type: string
+      - name: nfNumber
+        in: query
+        description: NF number.
+        required: true
+        type: string
+      - name: agencyCode
+        in: query
+        description: Agency code.
+        required: true
+        type: string
+      - name: sourceSystem
+        in: query
+        description: Source system (BRM or SERACOM).
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/InvoiceDetail'
+            description: Invoice detail and products
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+  /invoices/cicle:
+    get:
+      summary: Returns the list of invoices cicles
+      description: |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          invoices/cicle?ip=54.76.98.192&document=000000208&startDate=2018-04-01&endDate=2018-04-30&contractNumber=PIBSA000072017
+        ```
+        ##### Sample Response:
+        ```json
+        [
+            {
+                "startDateCicle": 2018-04-10,
+                "endDateCicle": 2018-05-10,
+                "enissionDate": 2018-05-10,
+                "contractNumber": "PIBSA000072017",
+                "nfeNumber": "123456",
+                "agencyCode": "078",
+                "nfNumber": "12345678",
+                "sourceSystem": "SERACOM"
+            },
+            {
+                "startDateCicle": 2018-05-10,
+                "endDateCicle": 2018-06-,
+                "enissionDate": 2018-05-10,
+                "contractNumber": "PIBSA000072017",
+                "nfeNumber": "123456",
+                "agencyCode": "078",
+                "nfNumber": "12345678",
+                "sourceSystem": "SERACOM"
+            }
+        ]
+        ```
+      operationId: getInvoicesCicle
+      produces:
+      - application/json
+      parameters:
+      - name: ip
+        in: query
+        required: true
+        type: string
+        format: ''
+        description: Requester IP address to audit trail.
+      - name: document
+        in: query
+        description: Unique number to identify the customer. The number can be the Document Base (12345678) or the Document (12345678000100).
+        required: true
+        type: string
+        default: ''
+      - name: startDate
+        in: query
+        description: Start date of the invoice cicle.
+        required: true
+        type: string
+        format: date
+      - name: endDate
+        in: query
+        description: End date of the invoice cicle.
+        required: true
+        type: string
+        format: date
+      - name: contractNumber
+        in: query
+        description: Contract number.
+        required: false
+        type: string
+      - name: contractDescription
+        in: query
+        description: Contract description.
+        required: false
+        type: string
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/InvoiceCicle'
+            description: List of invoices
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+  /invoices/new:
+    get:
+      summary: Returns the list of the new invoices
+      description: "##### Sample Request:\n```\nApiGateway:\n  header:\n    bearer:\
+        \ 0bfc68f0-2514-11e6-b67b-9e71128cae77\nSimple URL:\n  invoices/new?ip=54.76.98.192&document=000000208&nfeNumber=123456&dueDate=2018-07-26\n\
+        ```\n##### Sample Response:\n```json\n{\n  \"nfeNumber\": \"123456\",\n  \"\
+        originalDueDate\": 2018-07-26,\n  \"newInvoices\": \n  [\n    {\n      \"\
+        dueDate\": 2018-08-29,\n      \"originalValue\": 644.62,\n      \"openValue\"\
+        : 614.65,\n      \"fineValue\": 12.29,\n      \"interestValue\": 17.41,\n\
+        \      \"totalValue\": 644.35\n    },\n    {\n      \"dueDate\": 2018-08-30,\n\
+        \      \"originalValue\": 644.62,\n      \"openValue\": 614.65,\n      \"\
+        fineValue\": 12.29,\n      \"interestValue\": 17.92,\n      \"totalValue\"\
+        : 644.86\n    }\n  ]\n}\n```\n"
+      operationId: getNewInvoices
+      produces:
+      - application/json
+      parameters:
+      - name: ip
+        in: query
+        required: true
+        type: string
+        format: ''
+        description: Requester IP address to audit trail.
+      - name: document
+        in: query
+        description: Unique number to identify the customer. The number can be the Document Base (12345678) or the Document (12345678000100).
+        required: true
+        type: string
+        default: ''
+      - name: dueDate
+        in: query
+        description: Invoice original due date.
+        required: true
+        type: string
+        format: date
+      - name: nfeNumber
+        in: query
+        description: NF-e number.
+        required: true
+        type: string
+      responses:
+        '200':
+          description: Successful
+          schema:
+            $ref: '#/definitions/BankSlip'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+  /invoices/create:
+    post:
+      summary: Creates and returns the new bank slip information
+      description: |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          invoices/create?ip=54.76.98.192&document=000000208&nfeNumber=123456&dueDate=2018-07-26&newDueDate=2018-08-29&newValue=644.35        ```
+        ##### Sample Response:
+        ```json
+        {
+          "barCode": "11111.11111 222222.22222",
+          "linkInvoice": "www.invoice.com/get?id=WAOBYA21ZI"
+        }
+        ```
+      operationId: createInvoice
+      produces:
+      - application/json
+      parameters:
+      - name: ip
+        in: query
+        required: true
+        type: string
+        format: ''
+        description: Requester IP address to audit trail.
+      - name: document
+        in: query
+        description: Unique number to identify the customer. The number can be the Document Base (12345678) or the Document (12345678000100).
+        required: true
+        type: string
+        default: ''
+      - name: dueDate
+        in: query
+        description: Invoice original due date.
+        required: true
+        type: string
+        format: date
+      - name: nfeNumber
+        in: query
+        description: NF-e number.
+        required: true
+        type: string
+      - name: newDueDate
+        in: query
+        description: Invoice new due date.
+        required: true
+        type: string
+      - name: newValue
+        in: query
+        description: Invoice new value.
+        required: true
+        type: number
+        format: float
+      responses:
+        '200':
+          description: Successful
+          schema:
+            $ref: '#/definitions/NewBankSlip'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Error:
+    type: object
+    required:
+    - code
+    - message
+    properties:
+      code:
+        type: integer
+        format: int32
+        description: HTTP error code
+      message:
+        type: string
+        description: Returns the error code message
+  Invoice:
+    description: Information about the invoice value and due date
+    type: object
+    properties:
+      dueDate:
+        description: Invoice due date
+        type: string
+        format: date
+      value:
+        description: Invoice value
+        type: number
+        format: float
+      contractNumber:
+        description: Contract number
+        type: string
+      nfeNumber:
+        description: NF-e number
+        type: string
+      linkNFe:
+        description: Link to access the page of the NF-e document
+        type: string
+      status:
+        description: Invoice status
+        type: string
+      emissionDate:
+        description: Invoice emission date
+        type: string
+        format: date
+      barCode:
+        description: Invoice bar code number
+        type: string
+      linkInvoice:
+        description: Link to access the page of the invoice
+        type: string
+      agencyCode:
+        description: Agency code
+        type: string
+      nfNumber:
+        description: NF number
+        type: string
+      sourceSystem:
+        description: Source system (BRM or SERACOM)
+        type: string
+  BankSlip:
+    description: Information about the bank slip and the list of new invoices
+    type: object
+    properties:
+      nfNumber:
+        description: NF number
+        type: string
+      originalDueDate:
+        description: Invoice original due date
+        type: string
+        format: date
+      newInvoices:
+        type: array
+        description: List of the new invoices
+        items:
+          $ref: '#/definitions/NewInvoice'
+  NewBankSlip:
+    description: Information about the new bank slip created
+    type: object
+    properties:
+      barCode:
+        description: Invoice bar code number
+        type: string
+      linkInvoice:
+        description: Link to access the page of the invoice
+        type: string
+  NewInvoice:
+    description: Information about the new invoice value and due date
+    type: object
+    properties:
+      dueDate:
+        description: Invoice due date
+        type: string
+        format: date
+      originalValue:
+        description: Invoice original value
+        type: number
+        format: float
+      openValue:
+        description: Invoice open value
+        type: number
+        format: float
+      fineValue:
+        description: Invoice fine value
+        type: number
+        format: float
+      interestValue:
+        description: Invoice interest value
+        type: number
+        format: float
+      totalValue:
+        description: Invoice total value
+        type: number
+        format: float
+  InvoicesAmount:
+    description: Invoices amount and total value
+    type: object
+    properties:
+      count:
+        description: Number of open invoices
+        type: integer
+        format: int32
+      totalValue:
+        description: Total value of open invoices
+        type: number
+        format: float
+  InvoiceDetail:
+    description: Information about the invoice detail and products
+    type: object
+    properties:
+      startDateCicle:
+        description: Invoice start date of the bill cicle
+        type: string
+        format: date
+      endDateCicle:
+        description: Invoice end date of the bill cicle
+        type: string
+        format: date
+      city:
+        description: Invoice agency city
+        type: string
+      verificationCode:
+        description: Invoice verification code
+        type: string
+      discountValue:
+        description: Invoice discount value
+        type: number
+        format: float
+      totalValue:
+        description: Invoice total value
+        type: number
+        format: float
+      vcm:
+        description: Invoice vcm
+        type: number
+        format: float
+      installments:
+        description: Invoice installtments count
+        type: integer
+        format: int32
+      products:
+        type: array
+        description: Invoice products list
+        items:
+          $ref: '#/definitions/Product'
+  Product:
+    description: Information about the invoice product
+    type: object
+    properties:
+      name:
+        description: Production name
+        type: string
+      quantity:
+        description: Production quantity
+        type: integer
+      unityValue:
+        description: Product unity value
+        type: number
+        format: float
+      discountValue:
+        description: Product discount value
+        type: number
+        format: float
+      totalValue:
+        description: Product total value
+        type: number
+        format: float
+  InvoiceCicle:
+    description: Information about the invoice cicle
+    type: object
+    properties:
+      startDateCicle:
+        description: Invoice start date of the bill cicle
+        type: string
+        format: date
+      endDateCicle:
+        description: Invoice end date of the bill cicle
+        type: string
+        format: date
+      emissionDate:
+        description: Invoice emission date
+        type: string
+        format: date
+      contractNumber:
+        description: Contract number
+        type: string
+      nfeNumber:
+        description: NF-e number
+        type: string
+      agencyCode:
+        description: Agency code
+        type: string
+      nfNumber:
+        description: NF number
+        type: string
+      sourceSystem:
+        description: Source system (BRM or SERACOM)
+        type: string

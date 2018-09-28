@@ -1,0 +1,382 @@
+﻿swagger: '2.0'
+info:
+  title: Contract API
+  version: 1.0.0
+  description: The Contract API allows you to select contract data
+  contact:
+    name: CorporateSystemsSaoCarlos
+    email: CorporateSystemsSaoCarlos@br.experian.com
+host: sandbox-api.serasaexperian.com.br
+basePath: /self-service/contract/v1
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  OauthSecurity:
+    type: oauth2
+    flow: accessCode
+    authorizationUrl: 'https://www.serasaexperian.com.br/security/iam'
+    tokenUrl: 'https://www.serasaexperian.com.br/security/iam'
+    scopes:
+      bearer: Client authorization token - Bearer JWT
+security:
+  - OauthSecurity:
+      - bearer
+paths:
+  /contracts/{contractNumber}/value:
+    get:
+      summary: Returns contract values month to month from document base
+      description:
+        |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          contracts/PIBSA000162016/values?ip=54.76.98.192&document=000000208&customerType=L&lastMonthsNumber=6
+        ```
+        ##### Sample Response:
+        ```json
+        [
+            {
+                "month": 2,
+                "year": 2018,
+                "value": 350.00
+            },
+            {
+                "month": 3,
+                "year": 2018,
+                "value": 200.00
+            }
+        ]
+        ```
+      operationId: getValuesByMonthToMonth
+      produces:
+        - application/json
+      parameters:
+        - name: ip
+          in: query
+          required: true
+          type: string
+          format: ''
+          description: Requester IP address to audit trail.
+        - name: document
+          in: query
+          required: true
+          type: string
+          default: ''
+          description: Unique number to identify the customer. The number can be the Document Base (12345678) or the Document (12345678000100).
+        - name: customerType
+          in: query
+          description: Customer type simplify (S) or legacy (L) or none (N).
+          required: false
+          type: string
+          default: ''
+        - name: contractNumber
+          in: path
+          required: true
+          type: string
+          default: ''
+          description: Contract number
+        - name: lastMonthsNumber
+          in: query
+          required: true
+          type: integer
+          format: int32
+          description: Number of last months
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ValueByMonth'
+            description: Value by month
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+  /contracts/{contractNumber}/vcm:
+    get:
+      summary: Returns contract VCM from document base
+      description:
+        |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          contracts/PIBSA000162016/vcm?ip=54.76.98.192&document=000000208&customerType=L
+        ```
+        ##### Sample Response:
+        ```json
+        {
+            "vcmValue": 2659.26
+        }
+        ```
+      operationId: getVCM
+      produces:
+        - application/json
+      parameters:
+        - name: ip
+          in: query
+          required: true
+          type: string
+          format: ''
+          description: Requester IP address to audit trail.
+        - name: document
+          in: query
+          required: true
+          type: string
+          default: ''
+          description: Unique number to identify the customer. The number can be the Document Base (12345678) or the Document (12345678000100).
+        - name: customerType
+          in: query
+          description: Customer type simplify (S) or legacy (L) or none (N).
+          required: false
+          type: string
+          default: ''
+        - name: contractNumber
+          in: path
+          required: true
+          type: string
+          default: ''
+          description: Contract number
+      responses:
+        '200':
+          description: Successful
+          schema:
+            $ref: '#/definitions/VCMValue'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+  /contracts/active:
+    get:
+      summary: Returns active contracts from document base
+      description:
+        |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          contracts/active?ip=54.76.98.192&document=000000208&customerType=L
+        ```
+        ##### Sample Response:
+        ```json
+        [
+            {
+                "contractNumber": "PIBSA000092017"
+            },
+            {
+                "contractNumber": "PIBSA000162016"
+            },
+            {
+                "contractNumber": "PIBSA000282016"
+            }
+        ]
+        ```
+      operationId: getActiveContracts
+      produces:
+        - application/json
+      parameters:
+        - name: ip
+          in: query
+          required: true
+          type: string
+          format: ''
+          description: Requester IP address to audit trail.
+        - name: document
+          in: query
+          required: true
+          type: string
+          default: ''
+          description: Unique number to identify the customer. The number can be the Document Base (12345678) or the Document (12345678000100).
+        - name: customerType
+          in: query
+          description: Customer type simplify (S) or legacy (L) or none (N).
+          required: false
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ActiveContract'
+            description: Active contracts from document base
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+  /contracts/count:
+    get:
+      summary: Returns the number of active contracts from document base
+      description:
+        |
+        ##### Sample Request:
+        ```
+        ApiGateway:
+          header:
+            bearer: 0bfc68f0-2514-11e6-b67b-9e71128cae77
+        Simple URL:
+          contracts/count?ip=54.76.98.192&document=000000208&customerType=L
+        ```
+        ##### Sample Response:
+        ```json
+        {
+            "numberOfActiveContract": 10
+        }
+        ```
+      operationId: getNumberOfActiveContracts
+      produces:
+        - application/json
+      parameters:
+        - name: ip
+          in: query
+          required: true
+          type: string
+          format: ''
+          description: Requester IP address to audit trail.
+        - name: document
+          in: query
+          required: true
+          type: string
+          default: ''
+          description: Unique number to identify the customer. The number can be the Document Base (12345678) or the Document (12345678000100).
+        - name: customerType
+          in: query
+          description: Customer type simplify (S) or legacy (L) or none (N).
+          required: false
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Successful
+          schema:
+            $ref: '#/definitions/NumberOfActiveContract'
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/Error'
+        '422':
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Error:
+    type: object
+    required:
+        - code
+        - message
+    properties:
+      code:
+        type: integer
+        format: int32
+        description: HTTP error code
+      message:
+        type: string
+        description: Returns the error code message
+  ActiveContract:
+    description: Information about the contract
+    type: object
+    properties:
+      contractNumber:
+        type: string
+        description: Contract Number
+  NumberOfActiveContract:
+    description: Number of active contracts
+    type: object
+    properties:
+      numberOfActiveContract:
+        type: integer
+        format: int32
+        description: Number of active contracts
+  ValueByMonth:
+    description: Value by month
+    type: object
+    properties:
+      month:
+        type: integer
+        format: int32
+        description: Invoice month
+      value:
+        type: number
+        format: float
+        description: Invoice value
+  VCMValue:
+    description: Contract VCM value
+    type: object
+    properties:
+      vcmValue:
+        type: number
+        format: float
+        description: Contract VCM value
